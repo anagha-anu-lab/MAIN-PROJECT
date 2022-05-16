@@ -1,0 +1,88 @@
+
+<html>
+<head>
+    <meta>
+    <title>Sign In</title>
+</head>
+<body>
+<form action="/blood_bank_signup_post" name="form1" method="post" enctype="multipart/form-data">
+      <h3 align="center">Sign Up</h3>
+    <table align="center">
+        <tr>
+            <th>Name</th>
+            <td><input type="text" name="textfield1" placeholder="Enter Name" required></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="email" name="textfield2" placeholder="Enter Email" required></td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td><input type="text" name="textfield3" placeholder="Enter Phone"  required maxlength="10"></td>
+        </tr>
+        <tr>
+            <th>Licence No</th>
+            <td><input type="text" name="textfield4" placeholder="Enter Licence Number" required></td>
+        </tr>
+        <tr>
+            <th>Place</th>
+            <td><input type="text" name="textfield7" placeholder="Enter Place" required></td>
+        </tr>
+        <tr>
+            <th>post</th>
+            <td><input type="text" name="textfield8" placeholder="Enter City" required></td>
+        </tr>
+        <tr>
+            <th>pin</th>
+            <td><input type="text" name="textfield9" placeholder="Enter State" required></td>
+        </tr>
+
+        <tr>
+            <th>district</th>
+            <td><input type="text" name="textfield10" placeholder="Enter Pincode" required ></td>
+        </tr>
+         <tr>
+            <th>Latitude</th>
+            <td><input type="text" name="textfield11" placeholder="Enter latitude" required ></td>
+        </tr>
+         <tr>
+            <th>longitude</th>
+            <td><input type="text" name="textfield112" placeholder="Enter longitude" required ></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><input type="password" name="textfield113" placeholder="Enter password" required ></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><input type="submit" id="btn" name="s1" value="Sign Up" class="submit"></td>
+        </tr>
+    </table>
+</form>
+
+<script>
+function dd()
+{
+    var n=document.getElementById('new').value;
+    var c=document.getElementById('cfm').value;
+    if (n!=c)
+   {
+     document.getElementById('btn').disabled = true;
+     document.getElementById('lab').style.color = "Red";
+     document.getElementById('lab').innerHTML = 'new password and confirm password not matching';
+    }
+    else
+    {
+    document.getElementById('btn').disabled = false;
+    document.getElementById('lab').innerHTML = ' ';
+    }
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>

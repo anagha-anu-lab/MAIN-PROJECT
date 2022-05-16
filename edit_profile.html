@@ -1,0 +1,53 @@
+{% extends 'blood_bank/bb_index.html'  %}
+{% block body %}
+<form action="/edit_profile_post" name="form1" method="post" enctype="multipart/form-data">
+
+    <table class="table table-borderless">
+        <tr>
+            <th>Name<input type="hidden" name="b_lid" value="{{ data['bb_lid'] }}"></th>
+            <td><input type="text" name="textfield1"  value="{{ data['name'] }}" class="form-control"required></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="email" name="textfield2" value="{{ data['email'] }}" class="form-control" required></td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td><input type="text" name="textfield3"  value="{{ data['phone'] }}" class="form-control" required ></td>
+        </tr>
+        <tr>
+            <th>Licence No</th>
+            <td><input type="text" name="textfield4" value="{{ data['license_no'] }}" class="form-control" required></td>
+        </tr>
+        <tr>
+            <th>Place</th>
+            <td><input type="text" name="textfield7" value="{{ data['place'] }}" class="form-control" required></td>
+        </tr>
+        <tr>
+            <th>post</th>
+            <td><input type="text" name="textfield8" value="{{ data['post'] }}" class="form-control" required></td>
+        </tr>
+        <tr>
+            <th>pin</th>
+            <td><input type="text" name="textfield9" value="{{ data['pin'] }}" class="form-control" required></td>
+        </tr>
+
+        <tr>
+            <th>district</th>
+            <td><input type="text" name="textfield10" value="{{ data['district'] }}" class="form-control" required ></td>
+        </tr>
+         <tr>
+            <th>Latitude</th>
+            <td><input type="text" name="textfield11" value="{{ data['latitide'] }}" class="form-control" required ></td>
+        </tr>
+         <tr>
+            <th>longitude</th>
+            <td><input type="text" name="textfield112" value="{{ data['longitude'] }}" class="form-control" required ></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><input type="submit" id="btn" name="s1" value="Edit" class="btn btn-primary"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

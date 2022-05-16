@@ -1,0 +1,45 @@
+{% extends 'blood_bank/bb_index.html' %}
+{% block body %}
+<table class="table table-borderless">
+    <tr>
+        <td>Name</td>
+        <td>{{ data['name'] }}</td>
+    </tr>
+     <tr>
+        <td>Email</td>
+        <td>{{ data['email'] }}</td>
+    </tr>
+     <tr>
+        <td>Phone</td>
+        <td>{{ data['phone'] }}</td>
+    </tr>
+     <tr>
+        <td>License No</td>
+        <td>{{ data['license_no'] }}</td>
+    </tr> <tr>
+        <td>Place</td>
+        <td>{{ data['place'] }}</td>
+    </tr> <tr>
+        <td>Post</td>
+        <td>{{ data['post'] }}</td>
+    </tr> <tr>
+        <td>Pin</td>
+        <td>{{ data['pin'] }}</td>
+    </tr> <tr>
+        <td>District</td>
+        <td>{{ data['district'] }}</td>
+    </tr>
+     <tr>
+        <td>Latitude</td>
+        <td>{{ data['latitide'] }}</td>
+    </tr>
+     <tr>
+        <td>Longitude</td>
+        <td>{{ data['longitude'] }}</td>
+    </tr>
+<tr>
+    <td><a href="/edit_profile/{{ data['bb_lid'] }}" class="btn btn-primary">Edit </a> </td>
+</tr>
+
+</table>
+{% endblock %}
