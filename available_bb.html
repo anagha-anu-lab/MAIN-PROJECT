@@ -1,0 +1,25 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+<form action="" method="post">
+    <table class="table table-borderless table-striped">
+        <tr>
+            <th>S.No</th>
+            <th>Blood Bank</th>
+            <th>Blood Group</th>
+            <th>Quantity/Unit</th>
+        </tr>
+        {% for i in data %}
+            <tr>
+            <td>{{ loop.index }}</td>
+                <td>{{ i['name'] }}</td>
+            <td>{{ i['bld_grp'] }}</td>
+            <td>{{ i['quantity'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</form>
+
+{% endblock %}

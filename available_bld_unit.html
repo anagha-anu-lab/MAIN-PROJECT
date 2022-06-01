@@ -1,0 +1,100 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name ="ggh" method="post" action="/blood_search_post">
+    <table>
+        <tr><th></th>
+            <td>Blood Bank</td>
+            <td><select name="search">
+                {% for i in bank %}
+                <option value="{{ i['bb_lid'] }}">{{ i['name'] }}</option>
+                {% endfor %}
+            </select></td>
+            <td><input type="submit" name="s2" value="search" class="btn btn-primary" ></td>
+        </tr>
+    </table>
+</form>
+
+<form name ="ggh" method="post" action="">
+    <table border="0" class="table table-hover">
+        <tr>
+{#            <td width="2">Blood group</td>#}
+           <th>Boold group</th>
+            <td>A+</td>
+            <td>A-</td>
+            <td>B+</td>
+            <td>B-</td>
+            <td>AB+</td>
+            <td>AB-</td>
+            <td>O+</td>
+            <td>O-</td>
+        </tr>
+
+
+ {% for i in data %}
+           <tr>
+{#           <td>Guantity</td>#}
+<th>Quantity</th>
+
+{#               <td>{{ loop.index }}</td>#}
+                  {% if i['A+']!= None %}
+               <td>{{ i['A+'] }} </td>
+                 {% else %}
+                       <td>0</td>
+                {% endif %}
+
+                   {% if i['A-']!= None %}
+               <td>{{ i['A-'] }}</td>
+                  {% else %}
+                  <td>0</td>
+                  {% endif %}
+
+             {% if i['B+']!= None %}
+               <td>{{ i['B+'] }}</td>
+                  {% else %}
+                  <td>0</td>
+                  {% endif %}
+
+                  {% if i['B-']!= None %}
+               <td>{{ i['B-'] }}</td>
+                  {% else %}
+                  <td>0</td>
+                  {% endif %}
+
+                    {% if i['AB+']!= None %}
+               <td>{{ i['AB+'] }}</td>
+                  {% else %}
+                  <td>0</td>
+                  {% endif %}
+
+
+                  {% if i['AB-']!= None %}
+               <td>{{ i['AB-'] }}</td>
+                  {% else %}
+                  <td>0</td>
+                  {% endif %}
+
+                    {% if i['O+']!= None %}
+               <td>{{ i['O+'] }}</td>
+                  {% else %}
+                  <td>0</td>
+                  {% endif %}
+
+
+                  {% if i['O-']!= None %}
+               <td>{{ i['O-'] }}</td>
+                  {% else %}
+                  <td>0</td>
+                  {% endif %}
+
+
+
+
+
+
+           </tr>
+    {% endfor %}
+    </table>
+</form>
+</body>
+{% endblock %}

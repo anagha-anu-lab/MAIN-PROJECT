@@ -1,0 +1,33 @@
+{% extends 'blood_bank/bb_index.html' %}
+{% block body %}
+<form action="/edit_blood_available_post" method="post">
+    <table class="table borderless table hover">
+        <tr>
+            <th>Blood Group<input type="hidden" name="a_b" value="{{ bld['ab_id'] }}"></th>
+            <td><select name="b1"  required class="form-control"  >
+                <option value="{{ bld['bld_grp'] }}" selected> {{ bld['bld_grp'] }}</option>
+                <option placeholder="choose"></option>
+                <option>A+</option>
+                <option>B+</option>
+                <option>O+</option>
+                <option>AB+</option>
+                <option>A-</option>
+                <option>b-</option>
+                <option>O-</option>
+                <option>AB-</option>
+{#                <option>A-</option>#}
+            </select> </td>
+        </tr>
+        <tr>
+            <th>Quantity/Unit</th>
+            <td><input type="number" class="form-control" value="{{ bld['quantity'] }}" required name="b2"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="s1" value="Update" class="btn btn-outline-primary"></td>
+        </tr>
+    </table>
+</form>
+
+
+
+{% endblock %}
