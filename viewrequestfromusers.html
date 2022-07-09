@@ -1,0 +1,42 @@
+{% extends 'blood_bank/bb_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table borderless table hover">
+    <tr>
+      <td>SL NO:</td>
+{#      <td>BB LOGIN ID</td>#}
+{#      <td>DONOR ID</td>#}
+        <td>NAME</td>
+        <td>GENDER</td>
+        <td>DOB</td>
+         <td>PHOTO</td>
+        <td>ADDRESS</td>
+        <td>CONTACT</td>
+        <td>BLOOD</td>
+
+    </tr>
+   {% for i in data %}
+            <tr>
+            <td>{{ loop.index }}</td>
+{#            <td>{{ i['bb_lid'] }}</td>#}
+{#            <td>{{ i['donor_id'] }}</td>#}
+                <td>{{ i['name'] }}</td>
+                <td>{{ i['gender'] }}</td>
+                <td>{{ i['dob'] }}</td>
+                <td><img src="{{ i["Photo"] }}" height="100px" width="100px"/></td>
+                <td>{{ i['place'] }} <br>
+                {{ i['pin'] }} <br>
+                {{ i['post'] }} <br>
+                {{ i['district'] }}</td>
+                <td>{{ i['phone'] }}
+                    <br>{{ i['email'] }}</td>
+                    <td>{{ i['bloodgroup'] }}</td>
+            <td width="50px"><a href="/acceptrequest/{{ i['reqid'] }}" class="btn btn-danger">Accept</a> </td>
+            <td width="50px"><a href="/rejectrequest/{{ i['reqid'] }}" class="btn btn-danger">Reject</a> </td>
+            </tr>
+        {% endfor %}
+
+   </tr>
+  </table>
+</form>
+{% endblock %}
